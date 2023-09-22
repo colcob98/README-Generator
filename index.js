@@ -1,36 +1,38 @@
 //packages needed for this application
 const inquirer = require("inquirer");
-//const generateMarkdown = require("./utils/generateMarkdown");
+const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
+const path = require('path');
 
 //an array of questions for user input
 const questions = [
   {
     type: "input",
-    name: "proj-title",
+    name: "title",
     message: "What is your application title?",
   },
   {
     type: "input",
-    name: "proj-description",
+    name: "description",
     message: "Please succinctly describe your application.",
   },
   {
     type: "input",
-    name: "proj-installation",
+    name: "installation",
     message: "How should the user install your application?",
   },
   {
     type: "input",
-    name: "proj-usage",
+    name: "usage",
     message: "How should the user use or access your application?",
   },
   {
     type: "list",
-    name: "proj-license",
+    name: "license",
     message:
       "Under what license are you contributing/releasing your application?",
     choices: [
-      "Apache License, Version 2.0",
+      "Apache License Version 2.0",
       "GNU General Public License v3.0",
       "The MIT License",
       'BSD 2-Clause "Simplified" License',
@@ -47,22 +49,38 @@ const questions = [
   },
   {
     type: "input",
-    name: "proj-contributions",
+    name: "contributions",
     message: "Who contributed to your application?",
   },
   {
     type: "input",
-    name: "proj-tests",
+    name: "tests",
     message: "How should potential users test your application?",
   },
+  {
+    type: "input",
+    name: "email",
+    message: "Please enter your email."
+  },
+  {
+    type: "input",
+    name: "username",
+    message: "Please enter your github username."
+  }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+//function to write README file
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
 
-// TODO: Create a function to initialize app
+//function to initialize app
 function init() {
     inquirer.prompt(questions)
+    .then((answers) => {
+        console.log('Generating README now');
+        writeToFile('README.md', generateMarkdown(answers))
+    })
 }
 
 // Function call to initialize app
