@@ -40,7 +40,7 @@ ${data.description}
 
 * [Usage](#usage)
 
-* [Contributions](#Contributions)
+* [Contributions](#contributions)
 
 * [Tests](#tests)
 
