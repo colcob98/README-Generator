@@ -32,7 +32,7 @@ ${renderLicenseBadge(data.license)}
 
 ## Description
 
-${data.proj-description}
+${data.description}
 
 ## Table of Contents
 
@@ -67,7 +67,7 @@ ${data.contributions}
 To run tests, run the following comand:
 
 \`\`\`
-${data.test}
+${data.tests}
 \`\`\`
 
 ## Questions
