@@ -35,6 +35,8 @@ Run 'node index.js' in your CDI and answer the questions.
 
 A demonstration can be seen below:
 
+https://github.com/colcob98/README-Generator/assets/112872448/312b2baa-5046-4d0f-a7fb-9679dd845baa
+
 ## Contributions
 
 The starter code for this project was developed by users [Xandromus]( https://github.com/Xandromus) and [gachoi06]( https://github.com/gachoi06), and can be accessed [here]( https://github.com/coding-boot-camp/potential-enigma). 
